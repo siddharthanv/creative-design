@@ -112,7 +112,7 @@ export default function Projects() {
         <Button
           variant="outlined"
           color="secondary"
-          href="/projects"
+          href="#/projects"
           sx={{
             borderRadius: "30px",
             textTransform: "none",
