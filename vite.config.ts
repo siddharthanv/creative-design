@@ -24,4 +24,9 @@ export default defineConfig({
       },
     },
   },
+
+  server: {
+    host: "0.0.0.0", // allow external devices
+    port: 5173,
+  },
 });

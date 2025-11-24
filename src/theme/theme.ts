@@ -3,9 +3,9 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1A73E8",
-      light: "#63A4FF",
-      dark: "#0049B5",
+      main: "#030303", // your main color (rich black)
+      light: "#3d3d3d", // soft grey tint (clean + modern)
+      dark: "#000000", // pure black for hover/active states
       contrastText: "#ffffff",
     },
     secondary: {
@@ -29,6 +29,11 @@ const theme = createTheme({
     // Optional: Custom palette extension
     greyBg: {
       main: "#f5f5f5",
+    },
+    gold: {
+      main: "#D4AF37",
+      light: "#F5D27A",
+      dark: "#8B6F28",
     },
   },
 

@@ -1,18 +1,20 @@
-import { Box, Container } from "@mui/material";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
+
+import { Header, Footer } from "../components";
+import SocialMediaSpeedDial from "@/components/speedDial/SocialMediaSpeedDial";
 
 export default function MainLayout() {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
 
-      <Container sx={{ flexGrow: 1, py: 3 }}>
+      <Box sx={{ flexGrow: 1, pt: { xs: 7, sm: 5 } }}>
         <Outlet />
-      </Container>
+      </Box>
 
       <Footer />
+      <SocialMediaSpeedDial />
     </Box>
   );
 }
