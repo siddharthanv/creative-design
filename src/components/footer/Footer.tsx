@@ -99,7 +99,7 @@ export default function Footer() {
           </Grid>
 
           {/* Services Column */}
-          <Grid size={{ xs: 6, sm: 6, md: 4 }} sx={{ ml: 5 }}>
+          <Grid size={{ xs: 6, sm: 6, md: 4 }}>
             <Typography sx={{ fontWeight: 600, mb: 2 }}>Services</Typography>
 
             {SERVICES.map((service, index) => (
