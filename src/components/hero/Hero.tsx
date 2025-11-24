@@ -2,7 +2,6 @@ import { Box, Typography } from "@mui/material";
 
 import ProjectStats from "./ProjectStats";
 import PrimaryButton from "../buttons/PrimaryButton";
-// import CallNowButton from "../buttons/CallNowButton";
 import heroImage from "../../assets/images/Interior_Site_Image.webp";
 
 export default function Hero() {
@@ -87,7 +86,6 @@ export default function Hero() {
           }}
         >
           <PrimaryButton>Get Free Site Visit</PrimaryButton>
-          {/* <CallNowButton>Call Now</CallNowButton> */}
         </Box>
 
         <ProjectStats />

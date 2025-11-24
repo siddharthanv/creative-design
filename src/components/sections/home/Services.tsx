@@ -34,7 +34,7 @@ const services = [
   { title: "Architecture Design", icon: <ArchitectureIcon fontSize="large" /> },
 ];
 
-export default function GoldServicesSection(): JSX.Element {
+export default function GoldServicesSection() {
   return (
     <Box
       component="section"

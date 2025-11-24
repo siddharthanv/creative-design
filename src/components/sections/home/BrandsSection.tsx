@@ -49,7 +49,7 @@ export default function BrandsSection() {
 
       <Grid container spacing={4} justifyContent="center">
         {categories.map((cat) => (
-          <Grid item xs={12} sm={6} md={4} key={cat.title}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={cat.title}>
             <Card
               sx={{
                 background: "#111",

@@ -7,8 +7,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import { SITE_CONFIG } from "@/constants/SiteConfig";
 
 export default function SocialMediaSpeedDial() {
-  const { WHATSAPP, INSTAGRAM, FACEBOOK, YOUTUBE, EMAIL_LINK } =
-    SITE_CONFIG.SOCIAL;
+  const { WHATSAPP, INSTAGRAM, FACEBOOK, EMAIL_LINK } = SITE_CONFIG.SOCIAL;
 
   const actions = [
     {

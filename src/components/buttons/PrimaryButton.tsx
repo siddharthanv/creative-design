@@ -1,6 +1,14 @@
-import { Button } from "@mui/material";
+import { Button, type ButtonProps } from "@mui/material";
+import type { ReactNode } from "react";
 
-export default function PrimaryButton({ children, ...props }) {
+interface PrimaryButtonProps extends ButtonProps {
+  children: ReactNode;
+}
+
+export default function PrimaryButton({
+  children,
+  ...props
+}: PrimaryButtonProps) {
   return (
     <Button
       size="large"

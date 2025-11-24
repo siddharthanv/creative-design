@@ -23,7 +23,7 @@ const SERVICES = [
 ];
 
 export default function Footer() {
-  const { INSTAGRAM, FACEBOOK, WHATSAPP, YOUTUBE } = SITE_CONFIG.SOCIAL;
+  const { INSTAGRAM, FACEBOOK, WHATSAPP } = SITE_CONFIG.SOCIAL;
 
   return (
     <Box sx={{ background: "#111", color: "#eee", pt: 6, pb: 2 }}>
@@ -76,7 +76,7 @@ export default function Footer() {
           }}
         >
           {/* Pages Column */}
-          <Grid item xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Typography sx={{ fontWeight: 600, mb: 2 }}>Pages</Typography>
 
             {menuItems.map((item) => (
@@ -99,7 +99,7 @@ export default function Footer() {
           </Grid>
 
           {/* Services Column */}
-          <Grid item xs={6} sx={{ ml: 5 }}>
+          <Grid size={{ xs: 6, sm: 6, md: 4 }} sx={{ ml: 5 }}>
             <Typography sx={{ fontWeight: 600, mb: 2 }}>Services</Typography>
 
             {SERVICES.map((service, index) => (

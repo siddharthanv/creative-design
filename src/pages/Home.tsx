@@ -1,7 +1,7 @@
 import { Hero } from "@/components";
 import VisitForm from "@/components/hero/VisitForm";
 // import AboutUs from "@/components/sections/home/AboutUs";
-import BrandsSection from "@/components/sections/home/BrandsSection";
+// import BrandsSection from "@/components/sections/home/BrandsSection";
 import ProjectsHome from "@/components/sections/home/ProjectsHome";
 import Services from "@/components/sections/home/Services";
 import UserReviews from "@/components/sections/home/UserReviews";
