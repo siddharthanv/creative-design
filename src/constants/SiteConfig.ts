@@ -10,7 +10,7 @@ export const SITE_CONFIG: SiteConfig = {
     EMAIL: "creativedesign.civil@gmail.com",
     LOCATION: "Kundrathur, Chennai, Tamil Nadu",
     ADDRESS_FULL:
-      "Plot No. PP7B, 5th Main Road Metro Grand City, Kundrathur, Chennai - 600069, Tamil Nadu, India",
+      "Plot No. 116, Aarthy's Villa, 4th Main Road, 5th Avenue, Metro Grand City, Kundrathur, Chennai - 600069, Tamil Nadu, India",
     BUSINESS_HOURS: "Mon – Sun: 8:00 AM – 10:00 PM",
   },
 

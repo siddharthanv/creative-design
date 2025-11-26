@@ -1,4 +1,6 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
+import ScrollToTop from "@/components/scrollToTop/ScrollToTop";
+
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -10,6 +12,7 @@ import NotFound from "../pages/NotFound";
 export default function AppRouter() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         {/* DEFAULT LAYOUT FOR ALL PAGES */}
         <Route path="/" element={<MainLayout />}>

@@ -83,7 +83,7 @@ export default function Footer() {
               <Typography
                 key={item.label}
                 component="a"
-                href={`#/${item.path}`}
+                href={`/creative-design/#/${item.path}`}
                 sx={{
                   display: "block",
                   mb: 1,
@@ -125,7 +125,7 @@ export default function Footer() {
             <Typography
               key={item.label}
               component="a"
-              href={item.path}
+              href={`/creative-design/#/${item.path}`}
               sx={{
                 display: "block",
                 mb: 1,
