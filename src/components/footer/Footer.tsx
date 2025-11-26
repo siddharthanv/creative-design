@@ -49,7 +49,7 @@ function FooterLinks({
 
 export default function Footer() {
   const { INSTAGRAM, FACEBOOK, WHATSAPP, EMAIL_LINK } = SITE_CONFIG.SOCIAL;
-  const pagesHref = "/creative-design/#/";
+  const pagesHref = "/#/";
 
   return (
     <Box sx={{ background: "#111", color: "#eee", pt: 6, pb: 2 }}>
