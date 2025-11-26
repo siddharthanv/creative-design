@@ -1,7 +1,6 @@
 import { Box, Typography, IconButton, Divider, Grid } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-// import YouTubeIcon from "@mui/icons-material/YouTube";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 
@@ -9,21 +8,48 @@ import Logo from "../common/Logo";
 import { SITE_CONFIG } from "@/constants/SiteConfig";
 import { menuItems } from "../header/menuItems";
 
-const SERVICES = [
-  "Residential Construction",
-  "Commercial Construction",
-  "Interior Painting",
-  "Roofing Solutions",
-  "Carpentry & Woodwork",
-  "Plumbing Works",
-  "Electrical Works",
-  "Foundation & Structure",
-  "False Ceiling",
-  "Architecture Design",
-];
+function FooterLinks({
+  heading,
+  items,
+  hrefPrefix,
+}: {
+  heading: string;
+  items: { label?: string; title?: string; path?: string }[];
+  hrefPrefix?: string;
+}) {
+  return (
+    <Box>
+      <Typography sx={{ fontWeight: 600, mb: 2 }}>{heading}</Typography>
+      {items.map((item, i) => {
+        const text = item.label ?? item.title ?? "";
+        const path = item.path ?? item.path ?? "";
+        const href = hrefPrefix ? `${hrefPrefix}${path}` : undefined;
+
+        return (
+          <Typography
+            key={i}
+            component={href ? "a" : "p"}
+            href={href}
+            sx={{
+              display: "block",
+              mb: 1,
+              fontSize: 14,
+              color: "#bbb",
+              textDecoration: "none",
+              "&:hover": { color: "secondary.main" },
+            }}
+          >
+            {text}
+          </Typography>
+        );
+      })}
+    </Box>
+  );
+}
 
 export default function Footer() {
-  const { INSTAGRAM, FACEBOOK, WHATSAPP } = SITE_CONFIG.SOCIAL;
+  const { INSTAGRAM, FACEBOOK, WHATSAPP, EMAIL_LINK } = SITE_CONFIG.SOCIAL;
+  const pagesHref = "/creative-design/#/";
 
   return (
     <Box sx={{ background: "#111", color: "#eee", pt: 6, pb: 2 }}>
@@ -32,130 +58,62 @@ export default function Footer() {
           maxWidth: "1400px",
           margin: "auto",
           px: { xs: 3, md: 4 },
-
-          // ⭐ MOBILE → FLEX COLUMN
-          display: {
-            xs: "flex",
-            md: "grid",
-          },
-          flexDirection: {
-            xs: "column",
-          },
-
-          // ⭐ DESKTOP → GRID
-          gridTemplateColumns: {
-            md: "3fr 1fr 1.5fr 1fr",
-          },
-
+          display: { xs: "flex", md: "grid" },
+          flexDirection: { xs: "column" },
+          gridTemplateColumns: { md: "3fr 1fr 1.5fr 1fr" },
           gap: 5,
         }}
       >
-        {/* COLUMN 1 — LOGO + ABOUT */}
+        {/* LOGO + ABOUT */}
         <Box>
           <Logo />
           <Typography
+            sx={{ fontSize: 14, color: "#bbb", lineHeight: 1.6, mt: 4 }}
+          >
+            {SITE_CONFIG.BRANDING.SHORT_ABOUT}
+          </Typography>
+          <Typography
             sx={{
               fontSize: 14,
-              color: "#bbb",
+              color: "secondary.main",
               lineHeight: 1.6,
-              mt: 4,
+              mt: 2,
             }}
           >
-            We are a Chennai-based Construction, Interior and Renovation company
-            delivering premium quality residential and commercial projects.
+            GST Registration Number: {SITE_CONFIG.GST_REG_NUM}
           </Typography>
         </Box>
 
-        {/* ⭐ MOBILE ONLY — PAGES + SERVICES SIDE BY SIDE (50% EACH) */}
+        {/* MOBILE: Pages + Services side-by-side */}
         <Grid
           container
           spacing={3}
-          sx={{
-            display: { xs: "flex", md: "none" },
-            flexWrap: "wrap",
-          }}
+          sx={{ display: { xs: "flex", md: "none" }, flexWrap: "wrap" }}
         >
-          {/* Pages Column */}
           <Grid size={{ xs: 6 }}>
-            <Typography sx={{ fontWeight: 600, mb: 2 }}>Pages</Typography>
-
-            {menuItems.map((item) => (
-              <Typography
-                key={item.label}
-                component="a"
-                href={`/creative-design/#/${item.path}`}
-                sx={{
-                  display: "block",
-                  mb: 1,
-                  fontSize: 14,
-                  color: "#bbb",
-                  textDecoration: "none",
-                  "&:hover": { color: "secondary.main" },
-                }}
-              >
-                {item.label}
-              </Typography>
-            ))}
+            <FooterLinks
+              heading="Pages"
+              items={menuItems}
+              hrefPrefix={pagesHref}
+            />
           </Grid>
-
-          {/* Services Column */}
-          <Grid size={{ xs: 6, sm: 6, md: 4 }}>
-            <Typography sx={{ fontWeight: 600, mb: 2 }}>Services</Typography>
-
-            {SERVICES.map((service, index) => (
-              <Typography
-                key={index}
-                sx={{
-                  mb: 1,
-                  fontSize: 14,
-                  color: "#bbb",
-                }}
-              >
-                {service}
-              </Typography>
-            ))}
+          <Grid size={{ xs: 6 }}>
+            <FooterLinks heading="Services" items={SITE_CONFIG.SERVICES} />
           </Grid>
         </Grid>
 
-        {/* ⭐ DESKTOP ONLY — PAGES */}
+        {/* DESKTOP: Pages */}
         <Box sx={{ display: { xs: "none", md: "block" } }}>
-          <Typography sx={{ fontWeight: 600, mb: 2 }}>Pages</Typography>
-
-          {menuItems.map((item) => (
-            <Typography
-              key={item.label}
-              component="a"
-              href={`/creative-design/#/${item.path}`}
-              sx={{
-                display: "block",
-                mb: 1,
-                fontSize: 14,
-                color: "#bbb",
-                textDecoration: "none",
-                "&:hover": { color: "secondary.main" },
-              }}
-            >
-              {item.label}
-            </Typography>
-          ))}
+          <FooterLinks
+            heading="Pages"
+            items={menuItems}
+            hrefPrefix={pagesHref}
+          />
         </Box>
 
-        {/* ⭐ DESKTOP ONLY — SERVICES */}
+        {/* DESKTOP: Services */}
         <Box sx={{ display: { xs: "none", md: "block" } }}>
-          <Typography sx={{ fontWeight: 600, mb: 2 }}>Services</Typography>
-
-          {SERVICES.map((service, index) => (
-            <Typography
-              key={index}
-              sx={{
-                mb: 1,
-                fontSize: 14,
-                color: "#bbb",
-              }}
-            >
-              {service}
-            </Typography>
-          ))}
+          <FooterLinks heading="Services" items={SITE_CONFIG.SERVICES} />
         </Box>
 
         {/* FOLLOW US (Always bottom on mobile) */}
@@ -178,7 +136,7 @@ export default function Footer() {
             <WhatsAppIcon sx={{ color: "#25D366" }} />
           </IconButton>
 
-          <IconButton onClick={() => window.open(WHATSAPP, "_blank")}>
+          <IconButton component="a" href={EMAIL_LINK}>
             <EmailIcon sx={{ color: "#D44638" }} />
           </IconButton>
         </Box>
@@ -195,13 +153,9 @@ export default function Footer() {
         reserved.
       </Typography>
       <Typography
-        sx={{
-          textAlign: "center",
-          fontSize: 12,
-          color: "secondary.main",
-        }}
+        sx={{ textAlign: "center", fontSize: 12, color: "secondary.main" }}
       >
-        Made by Siddharthan❤️
+        Made by Siddharthan ❤️
       </Typography>
     </Box>
   );

@@ -133,8 +133,8 @@ export default function VisitFormFields() {
           value={form.projectType}
           onChange={handleChange}
         >
-          {SITE_CONFIG.SERVICES.map((service) => (
-            <MenuItem value={service}>{service}</MenuItem>
+          {SITE_CONFIG.SERVICES.map(({ title }) => (
+            <MenuItem value={title}>{title}</MenuItem>
           ))}
           <MenuItem value="Other">Other</MenuItem>
         </TextField>

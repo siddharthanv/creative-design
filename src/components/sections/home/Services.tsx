@@ -1,38 +1,6 @@
 // src/components/GoldServicesSection.tsx
+import { SITE_CONFIG } from "@/constants/SiteConfig";
 import { Box, Typography, Paper } from "@mui/material";
-import HomeWorkIcon from "@mui/icons-material/HomeWork";
-import EngineeringIcon from "@mui/icons-material/Engineering";
-import FormatPaintIcon from "@mui/icons-material/FormatPaint";
-import RoofingIcon from "@mui/icons-material/Roofing";
-import CarpenterIcon from "@mui/icons-material/Carpenter";
-import PlumbingIcon from "@mui/icons-material/Plumbing";
-import BoltIcon from "@mui/icons-material/Bolt";
-import FoundationsIcon from "@mui/icons-material/PrecisionManufacturing";
-import WallpaperIcon from "@mui/icons-material/Wallpaper";
-import ArchitectureIcon from "@mui/icons-material/Architecture";
-
-const services = [
-  { title: "Interior Design", icon: <FormatPaintIcon fontSize="large" /> },
-  {
-    title: "Commercial Construction",
-    icon: <EngineeringIcon fontSize="large" />,
-  },
-  {
-    title: "Residential Construction",
-    icon: <HomeWorkIcon fontSize="large" />,
-  },
-  { title: "Carpentry & Woodwork", icon: <CarpenterIcon fontSize="large" /> },
-
-  { title: "Plumbing Works", icon: <PlumbingIcon fontSize="large" /> },
-  { title: "Electrical Works", icon: <BoltIcon fontSize="large" /> },
-  {
-    title: "Foundation & Structure",
-    icon: <FoundationsIcon fontSize="large" />,
-  },
-  { title: "False Ceiling", icon: <WallpaperIcon fontSize="large" /> },
-  { title: "Roofing Solutions", icon: <RoofingIcon fontSize="large" /> },
-  { title: "Architecture Design", icon: <ArchitectureIcon fontSize="large" /> },
-];
 
 export default function GoldServicesSection() {
   return (
@@ -74,7 +42,7 @@ export default function GoldServicesSection() {
           alignItems: "stretch",
         }}
       >
-        {services.map((s) => (
+        {SITE_CONFIG.SERVICES.map((s) => (
           <Paper
             key={s.title}
             elevation={0}

@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export interface ContactInfo {
   PHONE: string;
   PHONE_INT: string;
@@ -25,10 +27,16 @@ export interface WebsiteInfo {
   BASE_URL: string;
 }
 
+export interface ServiceItem {
+  title: string;
+  icon: ReactNode;
+}
+
 export interface SiteConfig {
   COMPANY_NAME: string;
+  GST_REG_NUM: string;
   CONTACT: ContactInfo;
   SOCIAL: SocialLinks;
   BRANDING: BrandingInfo;
-  SERVICES: string[];
+  SERVICES: ServiceItem[];
 }
