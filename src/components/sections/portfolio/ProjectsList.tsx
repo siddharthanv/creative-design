@@ -13,6 +13,9 @@ import {
   Commercial_Interior_work_in_chrompet,
   construction_work_in_manapakkam,
   Construction_work_in_siruseri,
+  completed_home_interior_work_at_kundrathur_metro_grand_city,
+  creative_design_manapakkam_site_interior_hall_tv_unit,
+  creative_design_kodambakkam_site_renovation_and_interior_modular_kitchen,
 } from "../../../assets/images";
 
 /**
@@ -61,7 +64,7 @@ export default function ProjectGalleryGrid({
                 {/* Image */}
                 <CardMedia
                   component="img"
-                  height="220"
+                  height="400"
                   image={p.imageUrl}
                   alt={p.title}
                   sx={{
@@ -167,5 +170,30 @@ const sampleProjects: Project[] = [
     status: "Completed",
     areaSqft: 900,
     imageUrl: construction_work_in_ramapuram,
+  },
+  {
+    id: 6,
+    title: "Interior Work in Kundrathur",
+    location: "Kundrathur, Chennai, TN",
+    status: "Completed",
+    areaSqft: 1500,
+    imageUrl: completed_home_interior_work_at_kundrathur_metro_grand_city,
+  },
+  {
+    id: 7,
+    title: "Interior Design at Casagrand Flat",
+    location: "Manapakkam, Chennai, TN",
+    status: "Completed",
+    areaSqft: 1850,
+    imageUrl: creative_design_manapakkam_site_interior_hall_tv_unit,
+  },
+  {
+    id: 8,
+    title: "Modular Kitchen - Interior Design",
+    location: "Kodambakkam, Chennai, TN",
+    status: "Completed",
+    areaSqft: 300,
+    imageUrl:
+      creative_design_kodambakkam_site_renovation_and_interior_modular_kitchen,
   },
 ];

@@ -1,5 +1,4 @@
 import { Hero } from "@/components";
-import VisitForm from "@/components/hero/VisitForm";
 // import AboutUs from "@/components/sections/home/AboutUs";
 // import BrandsSection from "@/components/sections/home/BrandsSection";
 import ProjectsHome from "@/components/sections/home/ProjectsHome";
@@ -17,7 +16,6 @@ export default function Home() {
       <ProjectsHome />
       {/* <BrandsSection /> */}
       <UserReviews />
-      <VisitForm />
     </>
   );
 }

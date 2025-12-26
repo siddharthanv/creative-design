@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import SocialMediaSpeedDial from "@/components/speedDial/SocialMediaSpeedDial";
+import VisitForm from "@/components/hero/VisitForm";
 
 import { Header, Footer } from "../components";
-import SocialMediaSpeedDial from "@/components/speedDial/SocialMediaSpeedDial";
 
 export default function MainLayout() {
   return (
@@ -13,6 +14,7 @@ export default function MainLayout() {
         <Outlet />
       </Box>
 
+      <VisitForm />
       <Footer />
       <SocialMediaSpeedDial />
     </Box>
