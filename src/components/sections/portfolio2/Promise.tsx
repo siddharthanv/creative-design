@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Container, Typography, Divider } from "@mui/material";
 
 const Promise = () => {
