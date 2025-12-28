@@ -16,6 +16,9 @@ import {
   completed_home_interior_work_at_kundrathur_metro_grand_city,
   creative_design_manapakkam_site_interior_hall_tv_unit,
   creative_design_kodambakkam_site_renovation_and_interior_modular_kitchen,
+  creative_design_kodambakkam_site_renovation_and_interior_pooja_unit_and_wardrobe,
+  creative_design_hitech_royal_site_full_building_painting_work,
+  creative_design_hitech_royal_site_terrace_sitting_area_painting_work,
 } from "../../../assets/images";
 
 /**
@@ -195,5 +198,31 @@ const sampleProjects: Project[] = [
     areaSqft: 300,
     imageUrl:
       creative_design_kodambakkam_site_renovation_and_interior_modular_kitchen,
+  },
+  {
+    id: 9,
+    title: "Pooja unit and wardrobe - Interior Design",
+    location: "Kodambakkam, Chennai, TN",
+    status: "Completed",
+    areaSqft: 250,
+    imageUrl:
+      creative_design_kodambakkam_site_renovation_and_interior_pooja_unit_and_wardrobe,
+  },
+  {
+    id: 10,
+    title: "Full Building Painting - Hitech Properties",
+    location: "Ramapuram, Chennai, TN",
+    status: "Completed",
+    areaSqft: 4000,
+    imageUrl: creative_design_hitech_royal_site_full_building_painting_work,
+  },
+  {
+    id: 11,
+    title: "Terrace Sitiing Area Painting - Hitech Properties",
+    location: "Ramapuram, Chennai, TN",
+    status: "Completed",
+    areaSqft: 500,
+    imageUrl:
+      creative_design_hitech_royal_site_terrace_sitting_area_painting_work,
   },
 ];

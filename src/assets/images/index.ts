@@ -6,3 +6,6 @@ export { default as construction_work_in_ramapuram } from "./construction_work_i
 export { default as completed_home_interior_work_at_kundrathur_metro_grand_city } from "./completed_home_interior_work_at_kundrathur_metro_grand_city.webp";
 export { default as creative_design_manapakkam_site_interior_hall_tv_unit } from "./creative_design_manapakkam_site_interior_hall_tv_unit_2.webp";
 export { default as creative_design_kodambakkam_site_renovation_and_interior_modular_kitchen } from "./creative_design_kodambakkam_site_renovation_and_interior_modular_kitchen.webp";
+export { default as creative_design_kodambakkam_site_renovation_and_interior_pooja_unit_and_wardrobe } from "./creative_design_kodambakkam_site_renovation_and_interior_pooja_unit_and_wardrobe.webp";
+export { default as creative_design_hitech_royal_site_full_building_painting_work } from "./creative_design_hitech_royal_site_full_building_painting_work.webp";
+export { default as creative_design_hitech_royal_site_terrace_sitting_area_painting_work } from "./creative_design_hitech_royal_site_terrace_sitting_area_painting_work.webp";
