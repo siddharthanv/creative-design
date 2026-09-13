@@ -1,26 +1,42 @@
 import { SITE_CONFIG } from "@/constants/SiteConfig";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/Creative Design.jpg";
+import logo from "../../assets/images/creative-design-logo.png";
+import lightLogo from "../../assets/images/creative-design-logo-light.png";
 
-export default function Logo() {
+interface LogoProps {
+  variant?: "default" | "light";
+  footer?: boolean;
+}
+
+export default function Logo({
+  variant = "default",
+  footer = false,
+}: LogoProps) {
   return (
     <Box
       component={Link}
       to="/"
       sx={{
-        display: "inline-block",
+        display: "inline-flex",
+        alignItems: "center",
         textDecoration: "none",
-        textAlign: { xs: "center", md: "left" },
+        lineHeight: 0,
       }}
     >
       <Box
         component="img"
-        src={logo} // <-- Place your logo here
-        alt={SITE_CONFIG.COMPANY_NAME}
+        src={variant === "light" ? lightLogo : logo}
+        alt={`${SITE_CONFIG.COMPANY_NAME} logo`}
         sx={{
-          height: { xs: 40, md: 55 }, // Responsive logo size
           width: "auto",
+          height: footer
+            ? { xs: 72, sm: 82, md: 88 }
+            : { xs: 50, sm: 54, md: 62 },
+          maxWidth: footer
+            ? { xs: 250, md: 310 }
+            : { xs: 190, sm: 210, md: 250 },
+          objectFit: "contain",
           display: "block",
         }}
       />

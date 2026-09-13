@@ -10,7 +10,7 @@ export default function MainLayout() {
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
 
-      <Box sx={{ flexGrow: 1, pt: { xs: 7, sm: 5 } }}>
+      <Box sx={{ flexGrow: 1, pt: { xs: "68px", md: "78px" } }}>
         <Outlet />
       </Box>
 

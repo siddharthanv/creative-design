@@ -7,7 +7,7 @@ export default function AboutUs() {
       id="about"
       sx={{
         padding: { xs: "60px 20px", md: "40px 80px" },
-        backgroundColor: "#f9f9f9",
+        backgroundColor: "greyBg.main",
       }}
     >
       <Box sx={{ margin: "0 auto" }}>
@@ -17,7 +17,7 @@ export default function AboutUs() {
             fontWeight: "bold",
             marginBottom: 3,
             textAlign: { xs: "center", md: "left" },
-            color: "#222",
+            color: "text.primary",
           }}
         >
           About Us
@@ -27,7 +27,7 @@ export default function AboutUs() {
           sx={{
             fontSize: "18px",
             lineHeight: 1.8,
-            color: "#444",
+            color: "text.secondary",
             textAlign: { xs: "center", md: "left" },
           }}
         >

@@ -19,19 +19,24 @@ export const SITE_CONFIG: SiteConfig = {
     PHONE: "+91 90427 65456",
     PHONE_INT: "919042765456",
     PHONE_DIAL: "tel:+919042765456",
+    PHONE_SECONDARY: "+91 88381 42624",
+    PHONE_SECONDARY_INT: "918838142624",
+    PHONE_SECONDARY_DIAL: "tel:+918838142624",
     EMAIL: "creativedesign.civil@gmail.com",
-    LOCATION: "Kundrathur, Chennai, Tamil Nadu",
+    LOCATION: "Chikkarayapuram, Chennai, Tamil Nadu",
     ADDRESS_FULL:
-      "Plot No. 116, Aarthy's Villa, 4th Main Road, 5th Avenue, Metro Grand City, Kundrathur, Chennai - 600069, Tamil Nadu, India",
+      "AVD Building, 1/344 B, Kundrathur Main Rd, Chikkarayapuram, Sikkarayapuram, Chennai, Tamil Nadu 600069",
     BUSINESS_HOURS: "Mon – Sun: 8:00 AM – 10:00 PM",
   },
 
   SOCIAL: {
     INSTAGRAM: "https://www.instagram.com/creativedesign.civil/",
     FACEBOOK: "https://www.facebook.com/creativedesign.civil",
+    GOOGLE:
+      "https://www.google.com/maps/search/?api=1&query=Creative%20Design%20AVD%20Building%201%2F344%20B%20Kundrathur%20Main%20Rd%20Chikkarayapuram%20Sikkarayapuram%20Chennai%20600069",
     YOUTUBE: "https://youtube.com/@yourchannel",
     WHATSAPP: "https://wa.me/919042765456",
-    EMAIL_LINK: "mailto:creativedesign@gmail.com",
+    EMAIL_LINK: "mailto:creativedesign.civil@gmail.com",
   },
 
   BRANDING: {

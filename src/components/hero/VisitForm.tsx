@@ -1,84 +1,143 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
+import type { ReactNode } from "react";
 import VisitFormFields from "./VisitFormFields";
 import { SITE_CONFIG } from "@/constants/SiteConfig";
 
 export default function VisitForm() {
+  const contact = SITE_CONFIG.CONTACT;
+
   return (
     <Box
+      id="visit-form"
       sx={{
         width: "100%",
-        backgroundColor: "#0D0D0D",
+        backgroundColor: "primary.main",
         color: "white",
         py: { xs: 6, md: 12 },
         px: { xs: 3, md: 8 },
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        gap: 8,
+        gap: { xs: 6, md: 8 },
         justifyContent: "center",
-        alignItems: { xs: "start", md: "center" },
+        alignItems: { xs: "stretch", md: "center" },
       }}
     >
-      {/* LEFT SIDE */}
-      <Box sx={{ flex: 1, maxWidth: 600 }}>
+      <Box sx={{ flex: 1, maxWidth: 620 }}>
         <Typography
           variant="h3"
-          sx={{ fontWeight: 700, lineHeight: 1.2, mb: 3 }}
+          sx={{
+            fontWeight: 700,
+            lineHeight: 1.12,
+            mb: 2.5,
+            fontSize: { xs: "2.25rem", sm: "2.75rem", md: "3rem" },
+          }}
         >
           Let’s Build Something Extraordinary
         </Typography>
 
         <Typography
           sx={{
-            fontSize: "18px",
-            color: "#cccccc",
+            fontSize: { xs: 16, sm: 18 },
+            color: "rgba(255,255,255,.72)",
             mb: 5,
-            maxWidth: 380,
+            maxWidth: 460,
           }}
         >
           Share your requirements and our team will contact you immediately.
         </Typography>
 
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
-          <Box>
-            <Typography sx={{ fontSize: "14px", color: "#999" }}>
-              Email
-            </Typography>
-            <Typography sx={{ fontSize: "20px", fontWeight: 600 }}>
-              {SITE_CONFIG.CONTACT.EMAIL}
-            </Typography>
-          </Box>
+        <Box sx={{ display: "grid", gap: 3.5 }}>
+          <ContactBlock label="Email">
+            <ContactLink href={`mailto:${contact.EMAIL}`}>
+              {contact.EMAIL}
+            </ContactLink>
+          </ContactBlock>
 
-          <Box>
-            <Typography sx={{ fontSize: "14px", color: "#999" }}>
-              Call or WhatsApp Us
-            </Typography>
-            <Typography sx={{ fontSize: "20px", fontWeight: 600 }}>
-              {SITE_CONFIG.CONTACT.PHONE}
-            </Typography>
-          </Box>
+          <ContactBlock label="Call or WhatsApp">
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.25 }}>
+              <ContactLink href={contact.PHONE_DIAL}>
+                {contact.PHONE}
+              </ContactLink>
+              <Typography sx={{ color: "rgba(255,255,255,.4)" }}>•</Typography>
+              <ContactLink href={contact.PHONE_SECONDARY_DIAL}>
+                {contact.PHONE_SECONDARY}
+              </ContactLink>
+            </Box>
+          </ContactBlock>
 
-          <Box>
-            <Typography sx={{ fontSize: "14px", color: "#999" }}>
-              Location
+          <ContactBlock label="Location">
+            <Typography
+              sx={{
+                fontSize: { xs: 17, sm: 19 },
+                fontWeight: 600,
+                lineHeight: 1.55,
+                maxWidth: 560,
+              }}
+            >
+              {contact.ADDRESS_FULL}
             </Typography>
-            <Typography sx={{ fontSize: "20px", fontWeight: 600 }}>
-              {SITE_CONFIG.CONTACT.ADDRESS_FULL}
-            </Typography>
-          </Box>
+          </ContactBlock>
 
-          <Box>
-            <Typography sx={{ fontSize: "14px", color: "#999" }}>
-              Business Hours
+          <ContactBlock label="Business Hours">
+            <Typography sx={{ fontSize: { xs: 17, sm: 19 }, fontWeight: 600 }}>
+              {contact.BUSINESS_HOURS}
             </Typography>
-            <Typography sx={{ fontSize: "20px", fontWeight: 600 }}>
-              {SITE_CONFIG.CONTACT.BUSINESS_HOURS}
-            </Typography>
-          </Box>
+          </ContactBlock>
         </Box>
       </Box>
 
-      {/* RIGHT SIDE FORM */}
       <VisitFormFields />
     </Box>
+  );
+}
+
+function ContactBlock({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <Box>
+      <Typography
+        sx={{
+          fontSize: 12,
+          color: "secondary.light",
+          textTransform: "uppercase",
+          letterSpacing: ".14em",
+          fontWeight: 800,
+          mb: 0.65,
+        }}
+      >
+        {label}
+      </Typography>
+      {children}
+    </Box>
+  );
+}
+
+function ContactLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      underline="none"
+      sx={{
+        color: "#fff",
+        fontSize: { xs: 17, sm: 19 },
+        fontWeight: 700,
+        lineHeight: 1.4,
+        transition: "color .2s ease",
+        "&:hover": { color: "secondary.light" },
+      }}
+    >
+      {children}
+    </Link>
   );
 }

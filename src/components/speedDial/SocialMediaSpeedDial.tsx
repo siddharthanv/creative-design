@@ -1,56 +1,79 @@
-import { SpeedDial, SpeedDialAction, SpeedDialIcon } from "@mui/material";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import GoogleIcon from "@mui/icons-material/Google";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-// import YouTubeIcon from "@mui/icons-material/YouTube";
-import EmailIcon from "@mui/icons-material/Email";
+import { Box, IconButton, Tooltip } from "@mui/material";
+
 import { SITE_CONFIG } from "@/constants/SiteConfig";
 
+const socialItems = [
+  {
+    label: "Instagram",
+    icon: <InstagramIcon fontSize="small" />,
+    url: SITE_CONFIG.SOCIAL.INSTAGRAM,
+  },
+  {
+    label: "Facebook",
+    icon: <FacebookRoundedIcon fontSize="small" />,
+    url: SITE_CONFIG.SOCIAL.FACEBOOK,
+  },
+  {
+    label: "Google",
+    icon: <GoogleIcon fontSize="small" />,
+    url: SITE_CONFIG.SOCIAL.GOOGLE,
+  },
+];
+
 export default function SocialMediaSpeedDial() {
-  const { WHATSAPP, INSTAGRAM, FACEBOOK, EMAIL_LINK } = SITE_CONFIG.SOCIAL;
-
-  const actions = [
-    {
-      icon: <WhatsAppIcon style={{ color: "#25D366" }} />,
-      name: "WhatsApp",
-      url: WHATSAPP, // replace with your number
-    },
-    {
-      icon: <InstagramIcon sx={{ color: "#E4405F" }} />,
-      name: "Instagram",
-      url: INSTAGRAM,
-    },
-    {
-      icon: <FacebookIcon sx={{ color: "#1877F2" }} />,
-      name: "Facebook",
-      url: FACEBOOK,
-    },
-    // {
-    //   icon: <YouTubeIcon sx={{ color: "#FF0000" }} />,
-    //   name: "YouTube",
-    //   url: YOUTUBE,
-    // },
-    {
-      icon: <EmailIcon sx={{ color: "#D44638" }} />,
-      name: "Email",
-      url: EMAIL_LINK,
-    },
-  ];
-
   return (
-    <SpeedDial
-      ariaLabel="Social Media"
-      sx={{ position: "fixed", bottom: 30, right: 30, zIndex: 9999 }}
-      icon={<SpeedDialIcon />}
+    <Box
+      component="aside"
+      aria-label="Creative Design social links"
+      sx={{
+        position: "fixed",
+        right: { xs: 10, sm: 14, md: 18 },
+        top: { xs: "auto", md: "50%" },
+        bottom: { xs: 18, md: "auto" },
+        transform: { xs: "none", md: "translateY(-50%)" },
+        zIndex: (theme) => theme.zIndex.tooltip + 1,
+        display: "flex",
+        flexDirection: "column",
+        gap: { xs: 0.7, md: 0.85 },
+        p: { xs: 0.55, md: 0.65 },
+        borderRadius: 99,
+        bgcolor: "rgba(10,9,7,.82)",
+        border: "1px solid rgba(227,180,78,.32)",
+        boxShadow: "0 14px 35px rgba(0,0,0,.28)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+      }}
     >
-      {actions.map((action) => (
-        <SpeedDialAction
-          key={action.name}
-          icon={action.icon}
-          tooltipTitle={action.name}
-          onClick={() => window.open(action.url, "_blank")}
-        />
+      {socialItems.map((item) => (
+        <Tooltip key={item.label} title={item.label} placement="left" arrow>
+          <IconButton
+            component="a"
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open Creative Design on ${item.label}`}
+            sx={{
+              width: { xs: 38, md: 42 },
+              height: { xs: 38, md: 42 },
+              color: "#fff",
+              bgcolor: "rgba(255,255,255,.07)",
+              border: "1px solid rgba(255,255,255,.08)",
+              transition: "all .22s ease",
+              "&:hover": {
+                color: "#120f09",
+                bgcolor: "secondary.light",
+                borderColor: "secondary.light",
+                transform: "translateX(-2px)",
+              },
+            }}
+          >
+            {item.icon}
+          </IconButton>
+        </Tooltip>
       ))}
-    </SpeedDial>
+    </Box>
   );
 }

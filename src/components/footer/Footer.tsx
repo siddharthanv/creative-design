@@ -19,10 +19,12 @@ function FooterLinks({
 }) {
   return (
     <Box>
-      <Typography sx={{ fontWeight: 600, mb: 2 }}>{heading}</Typography>
+      <Typography sx={{ fontWeight: 700, mb: 2, color: "secondary.light" }}>
+        {heading}
+      </Typography>
       {items.map((item, i) => {
         const text = item.label ?? item.title ?? "";
-        const path = item.path ?? item.path ?? "";
+        const path = item.path ?? "";
         const href = hrefPrefix ? `${hrefPrefix}${path}` : undefined;
 
         return (
@@ -34,9 +36,10 @@ function FooterLinks({
               display: "block",
               mb: 1,
               fontSize: 14,
-              color: "#bbb",
+              color: "rgba(255,255,255,0.70)",
               textDecoration: "none",
-              "&:hover": { color: "secondary.main" },
+              transition: "color .2s ease",
+              "&:hover": { color: "secondary.light" },
             }}
           >
             {text}
@@ -52,7 +55,16 @@ export default function Footer() {
   const pagesHref = "/#/";
 
   return (
-    <Box sx={{ background: "#111", color: "#eee", pt: 6, pb: 2 }}>
+    <Box
+      sx={{
+        background: "linear-gradient(180deg, #0B0B0B 0%, #050505 100%)",
+        color: "#fff",
+        pt: 7,
+        pb: 2,
+        borderTop: "2px solid",
+        borderColor: "secondary.dark",
+      }}
+    >
       <Box
         sx={{
           maxWidth: "1400px",
@@ -64,18 +76,23 @@ export default function Footer() {
           gap: 5,
         }}
       >
-        {/* LOGO + ABOUT */}
         <Box>
-          <Logo />
+          <Logo variant="light" footer />
           <Typography
-            sx={{ fontSize: 14, color: "#bbb", lineHeight: 1.6, mt: 4 }}
+            sx={{
+              fontSize: 14,
+              color: "rgba(255,255,255,0.70)",
+              lineHeight: 1.7,
+              mt: 3,
+              maxWidth: 480,
+            }}
           >
             {SITE_CONFIG.BRANDING.SHORT_ABOUT}
           </Typography>
           <Typography
             sx={{
               fontSize: 14,
-              color: "secondary.main",
+              color: "secondary.light",
               lineHeight: 1.6,
               mt: 2,
             }}
@@ -84,7 +101,6 @@ export default function Footer() {
           </Typography>
         </Box>
 
-        {/* MOBILE: Pages + Services side-by-side */}
         <Grid
           container
           spacing={3}
@@ -102,7 +118,6 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        {/* DESKTOP: Pages */}
         <Box sx={{ display: { xs: "none", md: "block" } }}>
           <FooterLinks
             heading="Pages"
@@ -111,49 +126,45 @@ export default function Footer() {
           />
         </Box>
 
-        {/* DESKTOP: Services */}
         <Box sx={{ display: { xs: "none", md: "block" } }}>
           <FooterLinks heading="Services" items={SITE_CONFIG.SERVICES} />
         </Box>
 
-        {/* FOLLOW US (Always bottom on mobile) */}
         <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
-          <Typography sx={{ fontWeight: 600, mb: 2 }}>Follow Us</Typography>
+          <Typography sx={{ fontWeight: 700, mb: 2, color: "secondary.light" }}>
+            Follow Us
+          </Typography>
 
           <IconButton onClick={() => window.open(INSTAGRAM, "_blank")}>
-            <InstagramIcon sx={{ color: "#E4405F" }} />
+            <InstagramIcon sx={{ color: "secondary.light" }} />
           </IconButton>
-
           <IconButton onClick={() => window.open(FACEBOOK, "_blank")}>
-            <FacebookIcon sx={{ color: "#1877F2" }} />
+            <FacebookIcon sx={{ color: "secondary.light" }} />
           </IconButton>
-
-          {/* <IconButton onClick={() => window.open(YOUTUBE, "_blank")}>
-            <YouTubeIcon sx={{ color: "#FF0000" }} />
-          </IconButton> */}
-
           <IconButton onClick={() => window.open(WHATSAPP, "_blank")}>
-            <WhatsAppIcon sx={{ color: "#25D366" }} />
+            <WhatsAppIcon sx={{ color: "secondary.light" }} />
           </IconButton>
-
           <IconButton component="a" href={EMAIL_LINK}>
-            <EmailIcon sx={{ color: "#D44638" }} />
+            <EmailIcon sx={{ color: "secondary.light" }} />
           </IconButton>
         </Box>
       </Box>
 
-      {/* DIVIDER */}
-      <Divider sx={{ my: 3, borderColor: "#333" }} />
+      <Divider sx={{ my: 3, borderColor: "rgba(183,131,41,0.28)" }} />
 
-      {/* BOTTOM BAR */}
       <Typography
-        sx={{ textAlign: "center", fontSize: 13, color: "#aaa", mb: 1 }}
+        sx={{
+          textAlign: "center",
+          fontSize: 13,
+          color: "rgba(255,255,255,0.60)",
+          mb: 1,
+        }}
       >
         © {new Date().getFullYear()} {SITE_CONFIG.COMPANY_NAME}. All rights
         reserved.
       </Typography>
       <Typography
-        sx={{ textAlign: "center", fontSize: 12, color: "secondary.main" }}
+        sx={{ textAlign: "center", fontSize: 12, color: "secondary.light" }}
       >
         Made by Siddharthan ❤️
       </Typography>

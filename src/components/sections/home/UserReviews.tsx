@@ -37,7 +37,7 @@ export default function UserReviews() {
       sx={{
         width: "100%",
         padding: { xs: "50px 16px", md: "70px 60px" },
-        backgroundColor: "#f9f9f9",
+        backgroundColor: "greyBg.main",
       }}
     >
       {/* HEADING */}
@@ -47,7 +47,7 @@ export default function UserReviews() {
           fontWeight: "bold",
           textAlign: "center",
           marginBottom: 5,
-          color: "#222",
+          color: "text.primary",
         }}
       >
         What{" "}
@@ -102,14 +102,14 @@ export default function UserReviews() {
               .concat(
                 index + visibleCards > reviews.length
                   ? reviews.slice(0, (index + visibleCards) % reviews.length)
-                  : []
+                  : [],
               )
               .map((review, i) => (
                 <Box
                   key={i}
                   sx={{
                     flex: 1,
-                    background: "#fff",
+                    background: "background.paper",
                     borderRadius: "14px",
                     padding: "24px",
                     boxShadow: "0 6px 25px rgba(0,0,0,0.1)",
@@ -126,7 +126,7 @@ export default function UserReviews() {
                   <Typography
                     sx={{
                       margin: "20px 0",
-                      color: "#555",
+                      color: "text.secondary",
                       lineHeight: 1.7,
                       fontSize: "16px",
                     }}

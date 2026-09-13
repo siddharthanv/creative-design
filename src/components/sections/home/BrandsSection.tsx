@@ -37,7 +37,7 @@ export default function BrandsSection() {
         variant="h4"
         align="center"
         sx={{
-          color: "#D4AF37",
+          color: "secondary.light",
           fontWeight: "bold",
           mb: 6,
           letterSpacing: "2px",
@@ -53,12 +53,13 @@ export default function BrandsSection() {
             <Card
               sx={{
                 background: "#111",
-                border: "1px solid #CBA135",
+                border: "1px solid",
+                borderColor: "secondary.dark",
                 borderRadius: 3,
-                boxShadow: "0 0 20px 2px rgba(203,161,53,0.25)",
+                boxShadow: "0 0 20px 2px rgba(183,131,41,0.25)",
                 transition: "0.3s ease",
                 "&:hover": {
-                  boxShadow: "0 0 30px 4px rgba(203,161,53,0.45)",
+                  boxShadow: "0 0 30px 4px rgba(183,131,41,0.42)",
                   transform: "translateY(-6px)",
                 },
               }}
@@ -68,7 +69,7 @@ export default function BrandsSection() {
                 <Typography
                   variant="h6"
                   sx={{
-                    color: "#F5D27A",
+                    color: "secondary.light",
                     fontWeight: "bold",
                     mb: 2,
                     textAlign: "center",

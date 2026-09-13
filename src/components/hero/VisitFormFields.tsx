@@ -29,7 +29,7 @@ export default function VisitFormFields() {
   const [loading, setLoading] = useState(false); // 🔥 NEW
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -58,14 +58,14 @@ export default function VisitFormFields() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(form),
-        }
+        },
       );
 
       alert("Thanks for enquiring us!. Our team will contact you soon!");
       handleReset();
     } catch (error) {
       alert(
-        `Something went wrong!. Please call us at ${SITE_CONFIG.CONTACT.PHONE}`
+        `Something went wrong!. Please call us at ${SITE_CONFIG.CONTACT.PHONE}`,
       );
       console.error(error);
     }
@@ -86,10 +86,13 @@ export default function VisitFormFields() {
         maxWidth: { xs: "100%", md: 500 },
         p: { xs: 3, md: 5 },
         borderRadius: 4,
-        backgroundColor: "white",
+        backgroundColor: "background.paper",
       }}
     >
-      <Typography variant="h5" sx={{ fontWeight: 700, mb: 3, color: "#111" }}>
+      <Typography
+        variant="h5"
+        sx={{ fontWeight: 700, mb: 3, color: "text.primary" }}
+      >
         Book a Free Site Visit and Get Free Quote
       </Typography>
 
@@ -134,7 +137,9 @@ export default function VisitFormFields() {
           onChange={handleChange}
         >
           {SITE_CONFIG.SERVICES.map(({ title }) => (
-            <MenuItem value={title}>{title}</MenuItem>
+            <MenuItem key={title} value={title}>
+              {title}
+            </MenuItem>
           ))}
           <MenuItem value="Other">Other</MenuItem>
         </TextField>
@@ -166,7 +171,12 @@ export default function VisitFormFields() {
             color="secondary"
             fullWidth
             disabled={loading} // 🔥 disable during submit
-            sx={{ borderRadius: "30px", py: 1.4, color: "white" }}
+            sx={{
+              borderRadius: "30px",
+              py: 1.4,
+              color: "secondary.contrastText",
+              "&:hover": { color: "#fff" },
+            }}
             onClick={handleSubmit}
           >
             {loading ? "Sending..." : "Send Message"}

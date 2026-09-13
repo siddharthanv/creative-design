@@ -15,24 +15,18 @@ export default function PrimaryButton({
       sx={{
         borderRadius: "30px",
         px: 4,
-        fontWeight: 600,
-
-        // DESKTOP (default)
-        bgcolor: "primary.main",
-        color: "#fff",
-
-        // MOBILE OVERRIDE
-        "@media (max-width:600px)": {
-          bgcolor: "transparent",
-          border: "2px solid #fff",
-          color: "#fff",
-        },
-
+        py: 1.25,
+        fontWeight: 700,
+        bgcolor: "secondary.main",
+        color: "secondary.contrastText",
+        border: "1px solid",
+        borderColor: "secondary.main",
+        boxShadow: "0 10px 24px rgba(183,131,41,0.22)",
         "&:hover": {
-          bgcolor: {
-            xs: "rgba(255,255,255,0.15)",
-            md: "primary.dark",
-          },
+          bgcolor: "secondary.dark",
+          borderColor: "secondary.dark",
+          color: "#fff",
+          boxShadow: "0 12px 28px rgba(183,131,41,0.30)",
         },
       }}
       {...props}

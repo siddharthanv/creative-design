@@ -5,6 +5,7 @@ import { Box, Typography, Paper } from "@mui/material";
 export default function GoldServicesSection() {
   return (
     <Box
+      id="services"
       component="section"
       sx={{
         background: "linear-gradient(180deg,#0b0b0b 0%, #111213 100%)",
@@ -16,7 +17,7 @@ export default function GoldServicesSection() {
         variant="h4"
         align="center"
         sx={{
-          color: "#D4AF37",
+          color: "secondary.light",
           fontWeight: 800,
           mb: { xs: 4, md: 6 },
           letterSpacing: "1.5px",
@@ -56,17 +57,17 @@ export default function GoldServicesSection() {
               textAlign: "center",
               p: 2,
               borderRadius: 2,
-              border: "1px solid rgba(212,175,55,0.12)",
+              border: "1px solid rgba(183,131,41,0.18)",
               background:
                 "linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))",
-              boxShadow: "0 6px 22px rgba(203,161,53,0.06)",
+              boxShadow: "0 6px 22px rgba(183,131,41,0.08)",
               transition: "transform .28s ease, box-shadow .28s ease",
               cursor: "default",
 
               "&:hover": {
                 transform: "translateY(-8px)",
-                boxShadow: "0 14px 44px rgba(203,161,53,0.16)",
-                borderColor: "rgba(212,175,55,0.28)",
+                boxShadow: "0 14px 44px rgba(183,131,41,0.20)",
+                borderColor: "rgba(183,131,41,0.38)",
               },
             }}
           >
@@ -80,11 +81,11 @@ export default function GoldServicesSection() {
                 placeItems: "center",
                 mb: 1.2,
                 background:
-                  "radial-gradient(circle at 30% 30%, rgba(212,175,55,0.18), rgba(212,175,55,0.06) 35%, transparent 50%)",
-                border: "1px solid rgba(212,175,55,0.12)",
+                  "radial-gradient(circle at 30% 30%, rgba(183,131,41,0.22), rgba(183,131,41,0.08) 35%, transparent 50%)",
+                border: "1px solid rgba(183,131,41,0.18)",
               }}
             >
-              <Box sx={{ color: "#F5D27A" }}>{s.icon}</Box>
+              <Box sx={{ color: "secondary.light" }}>{s.icon}</Box>
             </Box>
 
             <Typography

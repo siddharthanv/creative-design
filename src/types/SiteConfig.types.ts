@@ -4,6 +4,9 @@ export interface ContactInfo {
   PHONE: string;
   PHONE_INT: string;
   PHONE_DIAL: string;
+  PHONE_SECONDARY: string;
+  PHONE_SECONDARY_INT: string;
+  PHONE_SECONDARY_DIAL: string;
   EMAIL: string;
   LOCATION: string;
   ADDRESS_FULL: string;
@@ -13,6 +16,7 @@ export interface ContactInfo {
 export interface SocialLinks {
   INSTAGRAM: string;
   FACEBOOK: string;
+  GOOGLE: string;
   YOUTUBE: string;
   WHATSAPP: string;
   EMAIL_LINK: string;
